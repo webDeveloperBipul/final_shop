@@ -16,3 +16,26 @@
 	<!-- link href="css/bootstrap.css" rel="stylesheet"-->
 	<!-- link href="css/stylesheet.css" rel="stylesheet"-->
 </head>
+
+
+<style>
+
+article.product {
+
+  text-align: center !important;
+  
+}
+
+article.product h3 > a {
+    font-size: 1rem;
+	color: #333;
+	text-decoration: none; }
+
+	article.product h3:hover > a {
+    
+	color: #666;
+	 }
+
+
+
+</style>

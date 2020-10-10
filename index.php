@@ -1,5 +1,4 @@
-
-<?php require_once('part/head.php');?>
+<?php require_once ('part/head.php'); ?>
 
 
 
@@ -71,13 +70,35 @@
 	
 				<div class="input-group input-group-lg mb-3" id="search-box" data-component-category>
 				  <input type="text" class="form-control default-font-size" placeholder="Search product" aria-label="Search product">
+					
+				 
+				   <!-- ==================================================== -->
 
 					<select class="custom-select input-group-append form-control-lg no-border-x default-font-size">
-						<option selected="">All categories</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
-					  </select>
+					<option selected="">All categories
+					</option>
+					<?php
+include ('action/sql_config.php');
+$sql = "SELECT * FROM catagory_search";
+$result = $conn->query($sql);
+if ($result->num_rows > 0)
+{
+    // output data of each row
+    while ($row = $result->fetch_assoc())
+    {
+?>
+					<option value="<?php echo $row["catagory_name"]; ?>">
+						<?php echo $row["catagory_name"]; ?> 
+					</option>
+					<?php
+    }
+}
+?>
+					</select>
+
+
+
+
 				  
 				  <div class="input-group-append">
 					  <button class="btn btn-primary" type="button"><i class="la la-search"></i></button>
@@ -190,50 +211,93 @@
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
-
-
-
+					<?php
+$sql = "SELECT * FROM main_menu";
+$result = $conn->query($sql);
+if ($result->num_rows > 0)
+{
+    // output data of each row
+    while ($row = $result->fetch_assoc())
+    {
+?>
+			
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#"><?php echo $row["menu_name"]; ?>  <span class="sr-only">(current)</span></a>
             </li>
 
 
-			<li class="nav-item dropdown dropdown--canvas dropdown--canvas--left dropdown--canvas--sm">
-				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-					Store Location
-				</a>
-				<div class="dropdown-menu">
-					Hello!
-				</div>
+			<?php
+    }
+}
+?>
+		
+
+
+		<li class="nav-item dropdown">
+	
+	<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+	
+	<div class="dropdown-menu" aria-labelledby="dropdown04">
+	<?php
+$sql = "SELECT sub_menu_name , link  FROM sub_menu where parent_name = 'about_us'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0)
+{
+    // output data of each row
+    while ($row = $result->fetch_assoc())
+    {
+?>
+	  <a class="dropdown-item" href="<?php echo $row["link"]; ?>"><?php echo $row["sub_menu_name"]; ?></a>
+	  <?php
+    }
+}
+?>
+	</div>
+			  
+
+			  
 			</li>
+			
 
-            <li class="nav-item">
-              <a class="nav-link" href="#">Delivery Services</a>
-            </li>
+			<li class="nav-item dropdown">
+	
+			<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+			
+			<div class="dropdown-menu" aria-labelledby="dropdown04">
+			<?php
+$sql = "SELECT sub_menu_name , link  FROM sub_menu where parent_name = 'blog'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0)
+{
+    // output data of each row
+    while ($row = $result->fetch_assoc())
+    {
+?>
+			  <a class="dropdown-item" href="<?php echo $row["link"]; ?>"><?php echo $row["sub_menu_name"]; ?></a>
+			  <?php
+    }
+}
+?>
+			</div>
+			
 
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
+			
+		  </li>
+           
 
-            <li class="nav-item">
-              <a class="nav-link" href="#">Support</a>
-            </li>
+		
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="#">FAQ</a>
-                <a class="dropdown-item" href="#">Our Story</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
+
+
+
+
+
+
+
+
           </ul>
         </div>
       </nav>
-
 
     </header>
     
@@ -290,25 +354,7 @@
 		  </a>
 		</div>
 
-		<!-- div class="container mb-5">
-			<div class="row">
-				<div class="col-md-4 banner p">
-					<a href="">
-						<img class="img-fluid" src="http://xezpro.nicoletthemes.com/image/cache/catalog/banner1-cr-390x180.png" alt="">
-					</a>
-				</div>
-				<div class="col-md-4 banner">
-					<a href="">
-						<img class="img-fluid" src="http://xezpro.nicoletthemes.com/image/cache/catalog/banner2-cr-390x180.png" alt="">
-					</a>
-				</div>
-				<div class="col-md-4 banner">
-					<a href="">
-						<img class="img-fluid" src="http://xezpro.nicoletthemes.com/image/cache/catalog/banner3-cr-390x180.png" alt="">
-					</a>
-				</div>
-			</div>
-		</div -->
+	
 
 
     <div class="container products-tab-carousel">
@@ -327,627 +373,90 @@
 
 		<section class="container products clearfix" data-component-products="limit:4 page:0 id:1679,807,786,1597" data-products='{"1": "Mac pro", "2":"Ipod"}'>
 
-			<div class="owl-carousel owl-theme">
+		<div class="owl-carousel owl-theme">
 
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/1.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-						
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
+		<?php
+		$sql = "SELECT * FROM product";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0)
+		{
+			// output data of each row
+			while ($row = $result->fetch_assoc())
+			{
+		?>
 
-						
-						
-						<div class="btngroup">
-						  <a type="button" class="btn btn-sm btn-secondary" title="Add to Cart" href="" data-product-cart-url data-vvveb-action="addCart" data-product_id=40>
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </a>
 
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
-						</div>
-						
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
+	<div class="item" data-product>
 
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/2.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-						
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
 
-						<div class="btngroup">
-						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </button>
 
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
 
-						</div>
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
+	
+	
+		
+		<article class="product">
+		
 
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/3.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-						
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
-
-						
-						<div class="btngroup">
-						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </button>
-
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
-
-						</div>				
-
-						
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
+		
+			<a href="product.php?p_id=<?php echo $row["product_code"]; ?>" data-url>
+				<img src="img/products/2.jpg" class="img-fluid" data-img>
+			</a>
+		
+			<h3>
+				<a href="product.php?p_id=<?php echo $row["product_code"]; ?>&ctg=<?php echo $row["catagory"]; ?>" data-product-url data-name data-url><?php echo $row["product_name"]; ?></a>
+			</h3>
+			
+			<span class="description" data-product-description>
+				Lorem ipsum
+			</span>
+			
+			<div class="price-group">
+				<div class="text-sm text-danger">
+				সর্বনিম্ন-<span class="currency" data-product-currency> </span><?php echo $row["minimum"]; ?><span data-product-price> পিছ</span>
+				</div>
 				
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/4.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-						
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
+				<div class="price">
+					<span class="currency" data-product-currency>$</span> <span data-product-price><?php echo $row["price"]; ?></span>
+				</div>
+			</div>						
 
-						
-						<div class="btngroup">
-						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </button>
+			
+			
+			<div class="btngroup">
+			  <a type="button" class="btn btn-sm btn-secondary" title="Add to Cart" href="product.php?p_id=<?php echo $row["product_code"]; ?>&ctg=<?php echo $row["catagory"]; ?>" data-product-cart-url data-vvveb-action="addCart" data-product_id=40>
+				  <i class="la la-shopping-cart"></i> কিনতে চাই
+			  </a>
 
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
+			  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
+				  <i class="la la-heart"></i>
+			  </button>
+			  
+			  
+			  
+			
+			</div>
+			
+			
+		</article><!-- product -->
 
-						</div>				
-
-						
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
-				
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/5.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-						
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
-
-						
-						<div class="btngroup">
-						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </button>
-
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
-
-						</div>				
-
-						
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
-				
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/6.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-						
-						
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
-
-						
-						<div class="btngroup">
-						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </button>
-
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
-
-						</div>				
-
-												
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
-
-
-			</div><!-- row -->
-		</section> <!-- products -->
-
-		  
-		  </div>
-		  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-		  
-		  </div>
-		  
-		  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-		  
-		  </div>
-		</div>
-    
-    </div>		
+</div><!-- row -->
 
 
 
 
-<section id="parallax_1" class="module parallax white mb-3">
-<div>
-<div class="container">
-<h3>Parallax call to action</h3> <p>Kale chips wolf banh mi, Tumblr polaroid Truffaut semiotics Echo Park<br> listicle sustainable meditation cold-pressed deep v twee keytar</p> <a href="/index.php?route=product/category&amp;path=20" class="btn btn-default">Buy now!</a> </div>
-</div>
-</section>
+<?php
+    }
+}
+?>
 
 
-    <div class="container products-tab-carousel">
-
-		<nav>
-		  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-			<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Featured products</a>
-			<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Popular products</a>
-			<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Bestseller products</a>
-		  </div>
-		  
-		</nav>
-		<div class="tab-content" id="nav-tabContent">
-		  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
 
-		<section class="container products clearfix" data-component-products="limit:4 page:0 id:1679,807,786,1597">
-
-			<div class="owl-carousel owl-theme">
-
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/2.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-						
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
-
-						<div class="btngroup">
-						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </button>
-
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
-
-						</div>
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
-
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/2.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-						
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
-
-						
-						<div class="btngroup">
-						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </button>
-
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
-
-						</div>				
-
-						
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
-
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/3.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-						
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
-
-						
-						<div class="btngroup">
-						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </button>
-
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
-
-						</div>				
-
-						
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
-				
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/4.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-						
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
-
-						
-						<div class="btngroup">
-						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </button>
-
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
-
-						</div>				
-
-						
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
-				
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/5.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
-
-						
-						<div class="btngroup">
-						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </button>
-
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
-
-						</div>
 
 
-						
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
-				
-				<div class="item" data-product>
-					
-					<article class="product">
-					
-						<a href="product.html" data-url>
-							<img src="img/products/6.jpg" class="img-fluid" data-img>
-						</a>
-					
-						<h3>
-							<a href="product.html" data-product-url data-name data-url>Apple cinema</a>
-						</h3>
-						
-						<span class="description" data-product-description>
-							Lorem ipsum
-						</span>
-						
-						<div class="price-group">
-							<div class="old-price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>385</span>
-							</div>
-							
-							<div class="price">
-								<span class="currency" data-product-currency>$</span> <span data-product-price>315</span>
-							</div>
-						</div>						
-
-						
-						
-						<div class="btngroup">
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-							  <i class="la la-heart"></i>
-						  </button>
-						  
-						  <button type="button" class="btn btn-sm  btn-link" title="Add to compare" data-product-compare-url>
-							  <i class="la la-exchange"></i>
-						  </button>
-
-						  <button type="button" class="btn btn-sm btn-secondary" title="Add to Cart" data-product-cart-url data-vvveb-action="addCart">
-							  <i class="la la-shopping-cart"></i> Add to cart
-						  </button>
-						</div>
-						
-						
-					</article><!-- product -->
-					
-				</div> <!-- col-md -->
 
 
-			</div><!-- row -->
-		</section> <!-- products -->
+</section> <!-- products -->
 
 		  
 		  </div>
@@ -1027,6 +536,4 @@
 	  </div>	
 	</div>    
 
-<?php require_once('part/footer.php');?>
-
-
+<?php require_once ('part/footer.php'); ?>

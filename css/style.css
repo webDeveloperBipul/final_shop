@@ -8843,7 +8843,9 @@ footer {
 
 /* product */
 article.product {
-  padding: 0.5rem; }
+  padding: 0.5rem; 
+  text-align: center !important;
+}
   article.product > a img.img-fluid {
     padding: 1rem;
     max-height: 180px; }
