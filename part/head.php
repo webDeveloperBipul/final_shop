@@ -13,6 +13,8 @@
 
 	<!-- Bootstrap core CSS -->
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/test_style.css" rel="stylesheet">
+	<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
 	<!-- link href="css/bootstrap.css" rel="stylesheet"-->
 	<!-- link href="css/stylesheet.css" rel="stylesheet"-->
 </head>
@@ -35,6 +37,13 @@ article.product h3 > a {
     
 	color: #666;
 	 }
+
+	 body{
+        font-family: 'SolaimanLipi', sans-serif !important;
+        padding:0;
+        margin:0;
+        height:100%;
+      }
 
 
 

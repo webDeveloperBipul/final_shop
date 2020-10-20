@@ -401,6 +401,9 @@ if ($result->num_rows > 0)
 			<a href="product.php?p_id=<?php echo $row["product_code"]; ?>" data-url>
 				<img src="img/products/2.jpg" class="img-fluid" data-img>
 			</a>
+			<button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
+				  <i class="la la-heart"></i>
+			  </button>
 		
 			<h3>
 				<a href="product.php?p_id=<?php echo $row["product_code"]; ?>&ctg=<?php echo $row["catagory"]; ?>" data-product-url data-name data-url><?php echo $row["product_name"]; ?></a>
@@ -427,9 +430,7 @@ if ($result->num_rows > 0)
 				  <i class="la la-shopping-cart"></i> কিনতে চাই
 			  </a>
 
-			  <button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
-				  <i class="la la-heart"></i>
-			  </button>
+			  
 			  
 			  
 			  
