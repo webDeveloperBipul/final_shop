@@ -1,197 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="Vvveb">
-	<base href="">
-	<link rel="icon" href="../../favicon.ico">
-
-	<title>Vvveb default theme</title>
-
-	<!-- Bootstrap core CSS -->
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/magnific-popup.css" rel="stylesheet">
-	<!-- link href="css/bootstrap.css" rel="stylesheet"-->
-	<!-- link href="css/stylesheet.css" rel="stylesheet"-->
-</head>
+<?php require_once ('part/head.php'); ?>
 
 <body>
 <div class="page-container">
 
-	<div id="top-nav" class="bg-light smaller-font-size text-muted">
-		<nav class="navbar-expand-md container px-3">
-		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
 
-		  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav mr-auto">
-			  <li class="nav-item active">
-				<a class="nav-link text-muted" href="#"><i class="la la-heart"></i> <span class="hidden-xs hidden-sm hidden-md">Wish List (0)</span></a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link text-muted" href="#"><i class="la la-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Shopping Cart</span></a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link text-muted" href="#"><i class="la la-share"></i> <span class="hidden-xs hidden-sm hidden-md">Checkout</span></a>
-			  </li>
-			</ul>
-			
-			<ul class="navbar-nav float-right">
-			  <li class="nav-item dropdown float-right">
-				<a class="nav-link dropdown-toggle text-muted" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-dollar"></i>&ensp;USD</a>
-				<div class="dropdown-menu" aria-labelledby="dropdown01">
-				  <a class="dropdown-item" href="#">Action</a>
-				  <a class="dropdown-item" href="#">Another action</a>
-				  <a class="dropdown-item" href="#">Something else here</a>
-				</div>
-			  </li>
-
-			  <li class="nav-item dropdown float-right">
-				<a class="nav-link dropdown-toggle text-muted" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-flag"></i>&ensp;EN</a>
-				<div class="dropdown-menu" aria-labelledby="dropdown01">
-				  <a class="dropdown-item" href="#">Action</a>
-				  <a class="dropdown-item" href="#">Another action</a>
-				  <a class="dropdown-item" href="#">Something else here</a>
-				</div>
-			  </li>
-			</ul>
-		  </div>
-		  
-		</nav>
-	</div>		
-
-	<header class="container mt-5">
-		
-	  <div class="row">
-		  
-		<div class="col-md-3">
-			<a href="index.html" class="logo">
-				<!-- img src="img/logo.png"--> 
-				<h1 class="text-dark"><b><i class="text-secondary la la-plug"></i><span>electr<span class="text-secondary">o.</span></span></b></h1>
-				<small class="text-dark">electronis shopping mall</small>
-				
-			</a>
-		</div>
-
-		<div class="col-md-5">
-		   
-		   <form class="">
-	
-				<div class="input-group input-group-lg mb-3" id="search-box">
-				  <input type="text" class="form-control default-font-size" placeholder="Search product" aria-label="Search product">
-
-					<select class="custom-select input-group-append form-control-lg no-border-x default-font-size">
-						<option selected="">All categories</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
-					  </select>
-				  
-				  <div class="input-group-append">
-					  <button class="btn btn-primary" type="button"><i class="la la-search"></i></button>
-				  </div>
-				</div>
-			</form>
-			
-		</div>
-
-		<div class="col-md-4">
-			
-			<div class="dropdown float-right" id="mini-cart">
-			  <a class="btn btn-link dropdown-toggle bg-faded p-0 chevron-big" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<i class="la la-shopping-cart d-inline-block" style="font-size:42px"><span class="cart-items">3</span></i>&ensp; <div class="d-inline-block text-dark"><span class="small d-block text-left">Your cart</span><span class="font-weight-bold">$3500.05</span></div>
-			  </a>
-
-			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">Action</a>
-				<a class="dropdown-item" href="#">Another action</a>
-				<a class="dropdown-item" href="#">Something else here</a>
-			  </div>
-			</div>
-			
-			<div class="dropdown float-right" id="mini-user">
-			  <a class="btn btn-link dropdown-toggle bg-faded p-0 chevron-big" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<i class="la la-user d-inline-block" style="font-size:42px"></i>&ensp; <div class="d-inline-block text-dark"><span class="small d-block text-left">My account</span><span class="font-weight-bold">Login/Register</span></div>
-			  </a>
-
-			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">Action</a>
-				<a class="dropdown-item" href="#">Another action</a>
-				<a class="dropdown-item" href="#">Something else here</a>
-			  </div>
-			</div>
-			
-		</div>
-	  
-	  </div>
-
-	
-      <nav class="navbar navbar-light bg-white  rounded navbar-expand-md mt-4">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-       
-
-        <div class="collapse navbar-collapse" id="containerNavbar">
-          <ul class="navbar-nav mr-auto">
-
-            <li class="nav-item dropdown categories-dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-bars"></i>&ensp;Categories <i class="la la-angle-down float-right"></i></a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="#"><i class="la la-desktop"></i> Desktops</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
+<?php require_once ('part/topnav.php'); ?>
+<?php require_once ('part/header.php'); ?>
 
 
-
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-
-
-			<li class="nav-item dropdown dropdown--canvas dropdown--canvas--left dropdown--canvas--sm">
-				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-					Store Location
-				</a>
-				<div class="dropdown-menu">
-					Hello!
-				</div>
-			</li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#">Delivery Services</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#">Support</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="#">FAQ</a>
-                <a class="dropdown-item" href="#">Our Story</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-    </header>
-    
     
     <div class="content">
 		
@@ -201,7 +17,7 @@
 		
     
     	<nav class="breadcrumb container">
-		  <a class="breadcrumb-item" href="#">Home</a>
+		  <a class="breadcrumb-item" href="index.php">Home</a>
 		  <a class="breadcrumb-item" href="#">Laptops</a>
 		  <a class="breadcrumb-item" href="#">Slim laptops</a>
 		  <span class="breadcrumb-item active">Sony Vaio</span>
@@ -212,6 +28,33 @@
 	    <article class="product-details container" data-component-product>
 			
 			<div class="row">
+
+
+
+
+
+<?php
+
+$sku = $_GET['p_id'];
+
+
+?>
+
+
+			<?php
+		$sql = "SELECT * FROM product where sku=$sku";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0)
+		{
+			// output data of each row
+			while ($row = $result->fetch_assoc())
+			{
+		?>
+
+
+
+
+
 
 				<!-- gallery and tabs column -->
 		
@@ -243,28 +86,30 @@
 				<!-- product name and add to cart -->
 				
 				<div class="col-md-4">
-					<h1 class="product-heading" data-name>Sony Vaio Ubuntu Cosmic</h1>
+					<h1 class="product-heading" data-name><?php echo $row["title"]; ?></h1>
 					
 					<!-- product attributes -->
 					<ul class="list-unstyled text-muted">
-					  <li>Brand: <span>Apple</span></li>
-					  <li>SKU: <span>333</span></li>
-					  <li>Stock: <span>In stock</span></li>
+					  <li>Brand: <span><?php echo $row["brand"]; ?></span></li>
+					  <li>SKU: <span><?php echo $row["sku"]; ?></span></li>
+					  <li>Stock: <span><?php echo $row["inStock"]; ?></span></li>
+					  <li>Minimum: <span><?php echo $row["minimum"]; ?></span></li>
+					  
 					</ul>
 					
 					<div class="old-price">
-						<span class="currency" data-currency>$</span> <span data-price>3.150.00</span>
+						<span class="currency" data-currency>$</span> <span data-price><?php echo $row["price"]; ?></span>
 					</div>
 					
 					<div class="price h3">
-						<span class="currency" data-currency>$</span> <span data-price>3.050.00</span>
+						<span class="currency" data-currency>$</span> <span data-price><?php echo $row["price"]; ?></span>
 					</div>
 					
 					<hr>
 					
 					<div class="form-group row">
 						<label for="productQuantity" class="col-form-label col-4">Quantity</label>
-						<input id="productQuantity" class="col-8 form-control" type="number" name="quantity" min="1" max="5">
+						<input id="productQuantity" class="col-8 form-control" type="number" name="quantity" min="12" max="100">
 					</div>
 					
 					<button type="button" class="btn btn-primary btn-block btn-icon">
@@ -275,7 +120,7 @@
 						 <i class="la la-shopping-cart"></i> Buy now
 					</button>
 					
-					
+					<!-- 
 					<div class="btn-group mt-3" role="group">
 						 
 						  <button type="button" class="btn  btn-link text-black-50 btn-sm" title="Wishlist">
@@ -286,7 +131,7 @@
 							  <i class="la la-exchange"></i> Compare
 						  </button>
 						  
-					</div>
+					</div> -->
 					
 				</div>
 
@@ -313,13 +158,13 @@
 				  </ul>
 				  <div class="tab-content" id="myTabContent">
 					<div role="tabpanel" class="tab-pane fade active show" id="home" aria-labelledby="home-tab" aria-expanded="true" data-description>
-					  <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+					  <p><?php echo $row["description"]; ?></p>
 					</div>
 					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" aria-expanded="false">
-					  <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+					  <p><?php echo $row["sort_details"]; ?></p>
 					</div>
 					<div class="tab-pane fade" id="dropdown1" role="tabpanel" aria-labelledby="dropdown1-tab">
-					  <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+					  <p><?php echo $row["others"]; ?></p>
 					</div>
 					<div class="tab-pane fade" id="dropdown2" role="tabpanel" aria-labelledby="dropdown2-tab">
 					  <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
@@ -330,7 +175,7 @@
 		
 	    </article><!-- product-details -->	
 		
-
+			<?php } }?>
 
 	<div class="container products-tab-carousel">
 

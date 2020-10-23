@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2020 at 09:34 PM
+-- Generation Time: Oct 23, 2020 at 10:19 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -71,6 +71,8 @@ CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
   `price` int(11) NOT NULL,
+  `priceUntil` varchar(11) NOT NULL,
+  `minimum` int(11) NOT NULL,
   `sku` int(11) NOT NULL,
   `brand` varchar(20) NOT NULL,
   `author` varchar(50) NOT NULL,
@@ -95,11 +97,8 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `title`, `price`, `sku`, `brand`, `author`, `inStock`, `description`, `catagory`, `sub_catagory`, `product_type`, `color`, `weight`, `stock_amount`, `rank`, `product_id`, `catagory_id`, `sub_catagory_ID`, `sort_details`, `others`, `image`) VALUES
-(1, 'samsung TV', 0, 0, '10000', '102', 12, '', '', '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(3, 'best quality condencer microphone', 0, 0, '1200', '1002', 6, '', '', '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(5, 'inhelar', 0, 0, '220', '5005', 10, '', '', '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(6, 'Computer', 0, 0, '14000', '10001', 1, '', '', '', '', '', 0, 0, '', 0, 0, 0, '', '', '');
+INSERT INTO `product` (`id`, `title`, `price`, `priceUntil`, `minimum`, `sku`, `brand`, `author`, `inStock`, `description`, `catagory`, `sub_catagory`, `product_type`, `color`, `weight`, `stock_amount`, `rank`, `product_id`, `catagory_id`, `sub_catagory_ID`, `sort_details`, `others`, `image`) VALUES
+(12, 'computer', 1000, '', 0, 12, '', '', 0, '', '', '', '', '', 0, 0, '', 0, 0, 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -181,7 +180,7 @@ ALTER TABLE `main_menu`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `sub_menu`

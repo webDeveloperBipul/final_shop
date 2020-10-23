@@ -63,7 +63,7 @@ include('part/head.php');
                               <input class="mt-3" type="number" name="stock_amount"  placeholder="Stock Amount" value="stock_amount">
                               <br>
                               
-                              <input class="mt-3" type="number" name="rank" ng-model="rank"  placeholder="rank">
+                              <input class="mt-3" type="number" name="minimum"   placeholder="Minimum">
                               <br>
                               <input class="mt-3" type="number" name="product_id"   placeholder="Producut Id">
                               <br>
