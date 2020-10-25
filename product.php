@@ -4,6 +4,55 @@
 <div class="page-container">
 
 
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php require_once ('part/topnav.php'); ?>
 <?php require_once ('part/header.php'); ?>
 
@@ -56,32 +105,64 @@ $sku = $_GET['p_id'];
 
 
 
-				<!-- gallery and tabs column -->
-		
-				<div class="col-md-8">
-					
-					<div class="zoom-gallery row">
 
-					<ul class="list-unstyled product-gallery col-md-2">
-						<li class="list-item">
-							<a href="img/products/1.jpg"><img src="img/products/1.jpg" class="img-fluid"></a>
-						</li>
-						<li class="list-item">
-							<a href="img/products/2.jpg"><img src="img/products/2.jpg" class="img-fluid"></a>
-						</li>
-						<li class="list-item">
-							<a href="img/products/3.jpg"><img src="img/products/3.jpg" class="img-fluid"></a>
-						</li>
-					</ul>
 
-					<div class="col-md-10">
-						<a href="img/products/5.jpg"><img src="img/products/5.jpg" class="img-fluid" data-image></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									<!-- gallery and tabs column -->
+					<div class="col-md-8">
+										
+						<section id="gallery" class="simplegallery">
+						<div class="main_image">
+							<img src="img/products/<?php echo $row["image"]; ?>" class="image_1" alt="" />
+							<img src="img/products/22.jpg" class="image_2" style="display:none" alt="" />
+							<img src="img/products/33.jpg" class="image_3" style="display:none" alt="" />
+							<img src="img/products/55.jpg" class="image_4" style="display:none" alt="" />
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="thumbnail">
+							<div class="thumb">
+								<a  rel="1">
+									<img src="img/thumbs/1.jpg" id="thumb_1" alt="" />
+								</a>
+							</div>
+							<div class="thumb">
+								<a  rel="2">
+									<img src="img/thumbs/2.jpg" id="thumb_2" alt="" />
+								</a>
+							</div>
+							<div class="thumb">
+								<a  rel="3">
+									<img src="img/thumbs/3.jpg" id="thumb_3" alt="" />
+								</a>
+							</div>
+							
+							<div class="thumb last">
+								<a rel="4">
+									<img src="img/thumbs/4.jpg" id="thumb_4" alt="" />
+								</a>
+							</div>
+						</div>
+						</section>
 					</div>
-					
-					</div>
-
-	
-				</div>
 
 				<!-- product name and add to cart -->
 				
@@ -513,101 +594,8 @@ $sku = $_GET['p_id'];
     
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/tether.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
 
-    <script>
-    $('#product-tabs a').click(function (e) {
-	  e.preventDefault()
-	  $(this).tab('show')
-	})
-
-	$(document).ready(function() {
-		$('.zoom-gallery').magnificPopup({
-			delegate: 'a',
-			type: 'image',
-			closeOnContentClick: false,
-			closeBtnInside: false,
-			mainClass: 'mfp-with-zoom mfp-img-mobile',
-			image: {
-				verticalFit: true,
-				titleSrc: function(item) {
-					return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
-				}
-			},
-			gallery: {
-				enabled: true
-			},
-			zoom: {
-				enabled: true,
-				duration: 300, // don't foget to change the duration also in CSS
-				opener: function(element) {
-					return element.find('img');
-				}
-			}
-			
-		});
-	});
-
-	$('.owl-carousel').owlCarousel({
-		loop:true,
-		navRewind:true,
-		margin:10,
-		nav:true,
-		dots:false,
-		navText: ['<i class="la la-angle-left"></i>','<i class="la la-angle-right"></i> '],
-		responsive:{
-			0:{
-				items:1
-			},
-			600:{
-				items:3
-			},
-			1000:{
-				items:5
-			}
-		}
-	})    
-    </script>	
     
-    <style>
-			
-		.image-source-link {
-			color: #98C3D1;
-		}
 
-		.mfp-with-zoom .mfp-container,
-		.mfp-with-zoom.mfp-bg {
-			opacity: 0;
-			-webkit-backface-visibility: hidden;
-			/* ideally, transition speed should match zoom duration */
-			-webkit-transition: all 0.3s ease-out; 
-			-moz-transition: all 0.3s ease-out; 
-			-o-transition: all 0.3s ease-out; 
-			transition: all 0.3s ease-out;
-		}
-
-		.mfp-with-zoom.mfp-ready .mfp-container {
-				opacity: 1;
-		}
-		.mfp-with-zoom.mfp-ready.mfp-bg {
-				opacity: 0.8;
-		}
-
-		.mfp-with-zoom.mfp-removing .mfp-container, 
-		.mfp-with-zoom.mfp-removing.mfp-bg {
-			opacity: 0;
-		}
-
-    </style>
-  </body>
-</html>
-
+ 
+ <?php include ('part/footer.php'); ?>

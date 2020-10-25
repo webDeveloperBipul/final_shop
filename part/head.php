@@ -17,6 +17,28 @@
 	<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
 	<!-- link href="css/bootstrap.css" rel="stylesheet"-->
 	<!-- link href="css/stylesheet.css" rel="stylesheet"-->
+
+
+
+
+	<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	
+	<link rel="stylesheet" type="text/css" href="./src/simplegallery.demo1.min.css" />
+	<script type="text/javascript" src="./src/simplegallery.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
 

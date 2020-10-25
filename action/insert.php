@@ -58,7 +58,7 @@ if ($conn->query($sql) === TRUE) {
   if (isset($_POST['img_upload'])) {
 
   	// image file directory
-  	$target = "../images/product/".basename($image);
+  	$target = "../img/products/".basename($image);
 
   	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
   		$msg = "Image uploaded successfully";

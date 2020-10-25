@@ -5,6 +5,8 @@
 <body>
 <div class="page-container">
 
+
+
 	
 
     <?php require_once ('part/topnav.php'); ?>
@@ -59,15 +61,15 @@
 		
 
 		
-			<a href="product.php?p_id=<?php echo $row["sku"]; ?>" data-url>
-				<img src="img/products/2.jpg" class="img-fluid" data-img>
+			<a href="product.php?p_id=<?php echo $row["sku"]; ?>&p_name=<?php echo $row["title"]; ?>" data-url>
+				<img src="img/products/<?php echo $row["image"]; ?>" class="img-fluid" data-img>
 			</a>
 			<button type="button" class="btn btn-sm  btn-link" title="Add to favorites" data-product-fav-url>
 				  <i class="la la-heart"></i>
 			  </button>
 		
 			<h3>
-				<a href="product.php?p_id=<?php echo $row["sku"]; ?>&ctg=<?php echo $row["catagory"]; ?>" data-product-url data-name data-url><?php echo $row["title"]; ?></a>
+				<a href="product.php?p_id=<?php echo $row["sku"]; ?>&p_name=<?php echo $row["title"]; ?>" data-product-url data-name data-url><?php echo $row["title"]; ?></a>
 			</h3>
 			
 			<span class="description" data-product-description>
